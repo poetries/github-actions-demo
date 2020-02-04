@@ -1,51 +1,26 @@
-import '@tarojs/async-await'
-import Taro, { Component } from '@tarojs/taro'
-import { Provider } from '@tarojs/redux'
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-import Index from './pages/index'
-import configStore from './store'
-
-import './app.scss'
-
-// 如果需要在 h5 环境中开启 React Devtools
-// 取消以下注释：
-// if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
-//   require('nerv-devtools')
-// }
-
-const store = configStore()
-
-class App extends Component {
-
-  config = {
-    pages: [
-      'pages/index/index'
-    ],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
-  }
-
-  componentDidMount () {}
-
-  componentDidShow () {}
-
-  componentDidHide () {}
-
-  componentDidCatchError () {}
-
-  // 在 App 类中的 render() 函数没有实际作用
-  // 请勿修改此函数
-  render () {
-    return (
-      <Provider store={store}>
-        <Index />
-      </Provider>
-    )
-  }
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hello World
+        </a>
+      </header>
+    </div>
+  );
 }
 
-Taro.render(<App />, document.getElementById('app'))
+export default App;
